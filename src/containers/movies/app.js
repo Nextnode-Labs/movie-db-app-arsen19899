@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
@@ -9,14 +9,11 @@ import Title from '../../components/title/title';
 import Home from "./home";
 import Page404 from "./Page404";
 import Movie from "./Movie"
+import {connect} from 'react-redux'
+import {fetchedMovies} from '../../redux/action'
 
-class News extends Component {
+function News(){
 
-
-  
-  render() {
-
- 
     return (
       <Router>
       <div className="container-fluid">
@@ -32,7 +29,17 @@ class News extends Component {
       </div>
       </Router>
     );
-  }
-}
 
-export default News;
+}
+const mapStateToProps = (state) => {
+  return {
+    
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    
+  };
+};
+export default connect(mapStateToProps ,mapDispatchToProps) (News);

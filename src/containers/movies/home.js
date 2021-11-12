@@ -4,7 +4,6 @@ import MovePost from '../../components/movies/movs';
 import Input from '../../components/input/search';
 import Pagination from '../../components/pagination/pagin';
 
-
 const BASE_PATH = 'https://api.themoviedb.org/3/';
 const POPUL ='movie/popular?';
 const SEARCH_PATH = 'search/movie?';
@@ -136,5 +135,6 @@ class Home extends Component {
     );
   }
 }
+
 
 export default Home;
