@@ -57,12 +57,13 @@ class Movie extends Component{
           backgroundSize: 'cover',
           minHeight: '800px'
         };
-      console.log(result)  
+     
   
 
         return (
-    
+           
           <div style={divStyle}>
+
             <div className="container">
           <div className="row bg-dark p-3 mt-5 text-dark bg-opacity-50">
             <h1 className="text-white">{original_title}</h1>
