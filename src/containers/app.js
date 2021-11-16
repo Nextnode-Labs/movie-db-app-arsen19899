@@ -8,13 +8,13 @@ import {
 import Header from '../components/header/header';
 import DiscoverPage from './HomePage';
 import Page404 from "./Page404";
-import Movie from "./Movie"
+import MoviePage from "./MoviePage"
 
 function News(){
 
     return (
       <Router>
-      <div className="container-fluid">
+      <div>
         <Header title=" Film Pars By Arsen " />
 
         
@@ -22,7 +22,7 @@ function News(){
         
         <Route exact path="/" exact component={DiscoverPage}/>
         <Route path="/home/:page" component={DiscoverPage} />
-         <Route path="/movie/:id" component={Movie}/>
+         <Route path="/movie/:id" component={MoviePage}/>
         <Route component={Page404}/>
         </Switch>
       </div>

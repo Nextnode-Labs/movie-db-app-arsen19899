@@ -27,6 +27,8 @@ const Paginator = ({
         </Link>
       ) : null}
     </div>
+
+
   </div>
 );
 
