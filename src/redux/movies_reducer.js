@@ -30,7 +30,7 @@ function fetchMovie(state = initialState, action) {
   return {
     ...state,
     byId: _.merge({}, state.byId, {
-      [action.payload.id]: { ...action.payload, lastFetched: Date.now() }
+      [action.payload.id]: { ...action.payload}
     }),
     hasErrored: false
   };
