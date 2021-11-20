@@ -21,10 +21,10 @@ function News(){
 
         <Switch>
         <Route exact path="/" exact component={DiscoverPage}/>
-        <Route path="/popular/" component={DiscoverPage} />
-        <Route path="/popular/:page" component={DiscoverPage} />
-        <Route path="/upcom/" component={Up} />
-        <Route path="/upcom/:page" component={Up} />
+        <Route exact path="/popular/" component={DiscoverPage} />
+        <Route exact path="/popular/:page" component={DiscoverPage} />
+        <Route exact path="/upcom/" component={Up} />
+        <Route exact path="/upcom/:page" component={Up} />
         <Route exact path="/top/" component={Top}/>
         <Route exact path="/top/:page" component={Top}/>
          <Route path="/movie/:id" component={MoviePage}/>
