@@ -1,6 +1,6 @@
 import React from 'react';
 import MovieCard from '../components/movies/MovieCard';
-
+import Spinner from '../components/spinner/spinner';
 import Page404 from './Page404';
 
 const TopList = ({ topList, movieList, pageId }) => {
@@ -15,7 +15,7 @@ const TopList = ({ topList, movieList, pageId }) => {
   if (isLoading || !pages[pageId]) {
     return (
       <div className=''>
-            /* here will be spinner */
+            <Spinner/>
       </div>
     );
   }

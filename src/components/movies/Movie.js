@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Page404 from "../../containers/Page404";
 import moment from 'moment';
 import { BASE_API_IMG_URL } from '../../redux/constant';
-
+import Spinner from '../spinner/spinner';
 
 
 class Movie extends Component {
@@ -49,7 +49,7 @@ class Movie extends Component {
     if (isLoading || !movie) {
       return (
         <div className=''>
-          /* here will be spinner */
+          <Spinner/>
         </div>
       );
     }
