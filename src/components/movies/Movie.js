@@ -4,6 +4,7 @@ import moment from 'moment';
 import { BASE_API_IMG_URL } from '../../redux/constant';
 
 
+
 class Movie extends Component {
   constructor(props) {
     super(props);
@@ -119,6 +120,9 @@ class Movie extends Component {
           </div>
           <div className="col-md-12 col-sm-12 col-xs-12 text-light">
           <h3> Similar films</h3>
+          
+
+          
     </div>
         </div>
       </div>

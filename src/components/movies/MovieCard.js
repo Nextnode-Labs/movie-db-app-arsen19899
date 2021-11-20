@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
+
 const MovieCard = ({ movie }) => (
   <Link className='col-md-3 col-sm-12 col-xs-12 shadow p-3 mb-5 bg-white rounded position-relative text-decoration-none' to={`/movie/${movie.id}`}>
     

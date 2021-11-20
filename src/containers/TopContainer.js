@@ -1,40 +1,40 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchDiscoverMovies} from '../redux/discover_actions';
-import DiscoverList from './HomepageList';
+import {fetchTopMovies} from '../redux/action_top';
+import TopList from './TopList';
 import Paginator from '../components/pagination/Paginator';
 
-class DiscoverContainer extends Component {
+class TopContainer extends Component {
   componentDidMount() {
     const page = this.props.match.params.page || 1;
-    this.props.fetchDiscoverMovies(page);
+    this.props.fetchTopMovies(page);
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.match.params !== this.props.match.params) {
-      this.props.fetchDiscoverMovies(nextProps.match.params.page);
+      this.props.fetchTopMovies(nextProps.match.params.page);
       
       window.scroll(0, 0);
     }
   }
 
   render() {
-    const { movie, discover } = this.props;
+    const { movie, top} = this.props;
     const { params } = this.props.match;
-    const basePath = `/popular/`;
+    const basePath = `/top/`;
     const pageId = params.page || '1';
     const nextPageId = +pageId + 1;
     const prevPageId = +pageId - 1;
-    const { totalPages, totalResults } = discover;
-   
+    const { totalPages, totalResults } = top;
+   console.log(movie)
     return (
       
         <div className="container">
-        <DiscoverList
-          discoverList={discover}
-          movieList={movie.byId}
-          pageId={pageId}
-        />
+            <TopList 
+            topList={top}
+            movieList={movie.byId}
+            pageId={pageId}/>
+      
         <Paginator
           basePath={basePath}
           prevPageId={prevPageId}
@@ -52,10 +52,10 @@ class DiscoverContainer extends Component {
 const mapStateToProps = state => {
   return {
     movie: state.movies,
-    discover: state.discover
+    top: state.top
   };
 };
 
-export default connect(mapStateToProps, { fetchDiscoverMovies })(
-  DiscoverContainer
+export default connect(mapStateToProps, { fetchTopMovies })(
+  TopContainer
 );

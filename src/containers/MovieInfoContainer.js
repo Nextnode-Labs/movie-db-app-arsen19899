@@ -6,12 +6,14 @@ import Movie  from '../components/movies/Movie';
 class MovieInfoContainer extends Component {
   componentDidMount() {
     const id = this.props.match.params.id;
-    this.props.fetchMovie(id);
+       this.props.fetchMovie(id);
+    
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.id !== nextProps.match.params.id) {
       this.props.fetchMovie(nextProps.match.params.id);
+      
     }
   }
 

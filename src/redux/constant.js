@@ -7,5 +7,5 @@ export const API_KEY='api_key=b9f7a0ee130480f6cd231acd274b0daa';
 export const PAGE_PARAM = 'page=';
 export const PRE_FIX ='movie/';
 export const BASE_API_IMG_URL = 'http://image.tmdb.org/t/p/w1280/';
-export const UPCOMING = "/movie/upcoming?";
+export const UPCOMING = "movie/upcoming?";
 export const SIMILAR = '/similar?';

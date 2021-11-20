@@ -2,7 +2,9 @@ import {
   FETCH_MOVIE,
   FETCH_DISCOVER_MOVIES,
   FETCH_MOVIE_IS_LOADING,
-  FETCH_MOVIE_HAS_ERRORED
+  FETCH_MOVIE_HAS_ERRORED,
+  FETCH_TOP_MOVIES,
+  FETCH_UP_MOVIES,
 } from './types';
 import _ from 'lodash';
 
@@ -43,6 +45,22 @@ function fetchDiscoverMovies(state = initialState, action) {
     hasErrored: false
   };
 }
+function fetchTopMovies(state = initialState, action) {
+  return {
+    ...state,
+    byId: _.merge({}, state.byId, _.mapKeys(action.payload.results, 'id')),
+    hasErrored: false
+  };
+}
+
+function fetchUpMovies(state = initialState, action) {
+  return {
+    ...state,
+    byId: _.merge({}, state.byId, _.mapKeys(action.payload.results, 'id')),
+    hasErrored: false
+  };
+}
+
 
 export function moviesReducer(state = initialState, action) {
   switch (action.type) {
@@ -54,6 +72,10 @@ export function moviesReducer(state = initialState, action) {
       return fetchMovie(state, action);
     case FETCH_DISCOVER_MOVIES:
       return fetchDiscoverMovies(state, action);
+    case FETCH_TOP_MOVIES:
+        return fetchTopMovies(state, action);
+    case FETCH_UP_MOVIES:
+          return fetchUpMovies(state, action);
     default:
       return state;
   }

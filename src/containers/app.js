@@ -9,6 +9,8 @@ import Header from '../components/header/header';
 import DiscoverPage from './HomePage';
 import Page404 from "./Page404";
 import MoviePage from "./MoviePage"
+import Top from './Top';
+import Up from './Up';
 
 function News(){
 
@@ -17,11 +19,14 @@ function News(){
       <div>
         <Header title=" Film Pars By Arsen " />
 
-        
         <Switch>
-        
         <Route exact path="/" exact component={DiscoverPage}/>
-        <Route path="/home/:page" component={DiscoverPage} />
+        <Route path="/popular/" component={DiscoverPage} />
+        <Route path="/popular/:page" component={DiscoverPage} />
+        <Route path="/upcom/" component={Up} />
+        <Route path="/upcom/:page" component={Up} />
+        <Route exact path="/top/" component={Top}/>
+        <Route exact path="/top/:page" component={Top}/>
          <Route path="/movie/:id" component={MoviePage}/>
         <Route component={Page404}/>
         </Switch>
