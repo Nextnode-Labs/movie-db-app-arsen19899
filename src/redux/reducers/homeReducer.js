@@ -2,7 +2,7 @@ import {
     FETCH_DISCOVER_MOVIES,
     FETCH_DISCOVER_MOVIES_IS_LOADING,
     FETCH_DISCOVER_MOVIES_HAS_ERRORED
-  } from '../redux/types';
+  } from '../types';
   
 const initialState = {
     pages: {},

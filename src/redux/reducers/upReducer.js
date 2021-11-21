@@ -1,8 +1,8 @@
 import {
-    FETCH_TOP_MOVIES,
-    FETCH_TOP_MOVIES_IS_LOADING,
-    FETCH_TOP_MOVIES_HAS_ERRORED
-  } from './types';
+    FETCH_UP_MOVIES,
+    FETCH_UP_MOVIES_IS_LOADING,
+    FETCH_UP_MOVIES_HAS_ERRORED
+  } from '../types';
   
   const initialState = {
     pages: {},
@@ -12,21 +12,21 @@ import {
     hasErrored: false
   };
   
-  function fetchTopMoviesIsLoading(state = initialState, action) {
+  function fetchUpMoviesIsLoading(state = initialState, action) {
     return {
       ...state,
       isLoading: action.payload
     };
   }
   
-  function fetchTopMoviesHasErrored(state = initialState, action) {
+  function fetchUpMoviesHasErrored(state = initialState, action) {
     return {
       ...state,
       hasErrored: action.payload
     };
   }
   
-  function fetchTopMovies(state = initialState, action) {
+  function fetchUpMovies(state = initialState, action) {
     return {
       ...state,
       pages: {
@@ -44,14 +44,14 @@ import {
     };
   }
   
-  export function topReducer(state = initialState, action) {
+  export function upReducer(state = initialState, action) {
     switch (action.type) {
-      case FETCH_TOP_MOVIES_IS_LOADING:
-        return fetchTopMoviesIsLoading(state, action);
-      case FETCH_TOP_MOVIES_HAS_ERRORED:
-        return fetchTopMoviesHasErrored(state, action);
-      case FETCH_TOP_MOVIES:
-        return fetchTopMovies(state, action);
+      case FETCH_UP_MOVIES_IS_LOADING:
+        return fetchUpMoviesIsLoading(state, action);
+      case FETCH_UP_MOVIES_HAS_ERRORED:
+        return fetchUpMoviesHasErrored(state, action);
+      case FETCH_UP_MOVIES:
+        return fetchUpMovies(state, action);
       default:
         return state;
     }

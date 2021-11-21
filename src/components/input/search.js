@@ -1,20 +1,60 @@
-import React from 'react';
+import React, { Component } from 'react';
+import axios from 'axios';
+import _ from 'lodash';
+import { BASE_PATH, API_KEY } from '../../redux/constant';
+import SearchBar from './SearchBar';
+import SearchResults from './SearchResults';
 
+class Search extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      results: [],
+      showResults: false
+    };
+    this.hideResults = this.hideResults.bind(this);
+    this.searchMovies = this.searchMovies.bind(this);
+    this.handleOnBlur = this.handleOnBlur.bind(this);
+  }
 
-import './input.css';
+  handleOnBlur(event) {
+    if (
+      !event.relatedTarget ||
+      !event.relatedTarget.className.toLowerCase().includes('search')
+    ) {
+      this.hideResults();
+    }
+  }
 
-const Input = ({ onChange, value, onKeyPress }) => (
-  <div className="form-control me-2">
-    <i className="fas fa-search" />
-    <input
-      className="input"
-      placeholder="Click to search"
-      onChange={onChange}
-      onKeyPress={onKeyPress}
-      value={value}
-    />
-  </div>
-);
+  hideResults() {
+    setTimeout(() => this.setState({ showResults: false }), 100);
+  }
 
+  searchMovies(query) {
+    if (!query || query.length < 2) return;
+    const url = `${BASE_PATH}search/movie?${API_KEY}&query=${query}`;
+    axios
+      .get(url)
+      .then(response =>
+        this.setState({ results: response.data.results, showResults: true })
+      );
+  }
 
-export default Input;
+  render() {
+    const searchMovies = _.debounce(query => this.searchMovies(query), 250);
+    return (
+      <div
+        className='form-control mt-3'
+        onBlur={this.handleOnBlur}
+        onClick={this.hideResults}
+      >
+      <SearchBar onSearch={searchMovies} />
+      {this.state.showResults ? (
+          <SearchResults results={this.state.results} />
+        ) : null}
+      </div>
+    );
+  }
+}
+
+export default Search;

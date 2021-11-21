@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {fetchTopMovies} from '../redux/action_top';
+import {fetchTopMovies} from '../redux/actions/action_top';
 import TopList from './TopList';
 import Paginator from '../components/pagination/Paginator';
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchDiscoverMovies} from '../redux/discover_actions';
+import { fetchDiscoverMovies} from '../redux/actions/discover_actions';
 import DiscoverList from './HomepageList';
 import Paginator from '../components/pagination/Paginator';
 

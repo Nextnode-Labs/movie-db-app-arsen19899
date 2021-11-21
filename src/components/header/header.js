@@ -1,8 +1,8 @@
 import React from 'react';
-import Input from '../input/search';
+import Search from '../input/search';
 
 const Header = ({ title }) => (
-<header className='sticky-top bg-white container-fluid p0 m0'>
+<header className='bg-white container-fluid p0 m0'>
 <div className="container">  
 <div className="row">
 <div className="btn btn-danger m-3 col-md-4 col-sm-12 col-xs-12"> 
@@ -19,7 +19,7 @@ const Header = ({ title }) => (
  </a>
 </div>
 <div className="col-md-7 col-sm-12 col-xs-12"> 
- <Input></Input>
+ <Search></Search>
 </div>
 </div>
 </div> 

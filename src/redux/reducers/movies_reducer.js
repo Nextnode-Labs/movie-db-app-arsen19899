@@ -5,7 +5,7 @@ import {
   FETCH_MOVIE_HAS_ERRORED,
   FETCH_TOP_MOVIES,
   FETCH_UP_MOVIES,
-} from './types';
+} from '../types';
 import _ from 'lodash';
 
 const initialState = {
