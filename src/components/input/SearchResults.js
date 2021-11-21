@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import moment from 'moment';
 
 const SearchResults = ({ results }) => {
@@ -10,7 +9,7 @@ const SearchResults = ({ results }) => {
       {results && results.length !== 0 ? (
         results.map(result => (
           <li className='p-1' key={result.id}>
-            <Link className='z-index-master' to={`/movie/${result.id}`}>
+            <Link className='' role="button" to={`/movie/${result.id}`}>
  { result.poster_path!=null ?(      
        <img className="rounded" width= '50'  height = '50' src={`https://image.tmdb.org/t/p/w500${result.poster_path}`}></img>):
        (
@@ -37,7 +36,3 @@ const SearchResults = ({ results }) => {
 };
 
 export default SearchResults;
-
-SearchResults.propTypes = {
-  results: PropTypes.array.isRequired
-};

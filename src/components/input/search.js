@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import _ from 'lodash';
 import { BASE_PATH, API_KEY } from '../../redux/constant';
 import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
@@ -14,21 +13,13 @@ class Search extends Component {
     };
     this.hideResults = this.hideResults.bind(this);
     this.searchMovies = this.searchMovies.bind(this);
-    this.handleOnBlur = this.handleOnBlur.bind(this);
   }
 
-  handleOnBlur(event) {
-    if (
-      !event.relatedTarget ||
-      !event.relatedTarget.className.toLowerCase().includes('search')
-    ) {
-      this.hideResults();
-    }
-  }
 
-  hideResults() {
-    setTimeout(() => this.setState({ showResults: false }), 100);
-  }
+
+ hideResults() {
+   setTimeout(() => this.setState({ showResults: false }), 100);
+ }
 
   searchMovies(query) {
     if (!query || query.length < 2) return;
@@ -41,12 +32,11 @@ class Search extends Component {
   }
 
   render() {
-    const searchMovies = _.debounce(query => this.searchMovies(query), 250);
+    const searchMovies = query => this.searchMovies(query)
     return (
       <div
         className=''
-        onBlur={this.handleOnBlur}
-        onClick={this.hideResults}
+       onClick={this.hideResults}
       >
       <SearchBar onSearch={searchMovies} />
       {this.state.showResults ? (

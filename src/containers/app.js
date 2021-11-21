@@ -19,14 +19,14 @@ function News(){
         <Header title=" Film Pars By Arsen " />
 
         <Switch>
-        <Route exact path="/" exact component={DiscoverPage}/>
+        <Route exact path="/"  component={DiscoverPage}/>
         <Route exact path="/popular/" component={DiscoverPage} />
         <Route exact path="/popular/:page" component={DiscoverPage} />
         <Route exact path="/upcom/" component={Up} />
         <Route exact path="/upcom/:page" component={Up} />
         <Route exact path="/top/" component={Top}/>
         <Route exact path="/top/:page" component={Top}/>
-         <Route exact path="/movie/:id" component={MoviePage}/>
+        <Route exact path="/movie/:id" component={MoviePage}/>
         <Route component={Page404}/>
         </Switch>
       </div>

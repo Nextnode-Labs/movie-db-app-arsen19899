@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 
 class SearchBar extends Component {
@@ -9,7 +8,6 @@ class SearchBar extends Component {
       term: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleFocus = this.handleFocus.bind(this);
   }
 
   handleInputChange() {
@@ -18,9 +16,6 @@ class SearchBar extends Component {
     );
   }
 
-  handleFocus(event) {
-    event.target.select();
-  }
 
   render() {
     return (
@@ -31,14 +26,9 @@ class SearchBar extends Component {
           placeholder="Search movie..."
           ref={input => (this.search = input)}
           onChange={this.handleInputChange}
-          onFocus={this.handleFocus}
         />
      </div>
     );
   }
 }
 export default SearchBar;
-
-SearchBar.propTypes = {
-  onSearch: PropTypes.func.isRequired
-};
