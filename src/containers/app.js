@@ -26,7 +26,7 @@ function News(){
         <Route exact path="/upcom/:page" component={Up} />
         <Route exact path="/top/" component={Top}/>
         <Route exact path="/top/:page" component={Top}/>
-         <Route path="/movie/:id" component={MoviePage}/>
+         <Route exact path="/movie/:id" component={MoviePage}/>
         <Route component={Page404}/>
         </Switch>
       </div>

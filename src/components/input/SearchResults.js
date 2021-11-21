@@ -6,17 +6,17 @@ import moment from 'moment';
 const SearchResults = ({ results }) => {
   results = results.slice(0, 10);
   return (
-    <ul className=''>
+    <ul className='position-absolute shadow bg-white rounded w-auto p-3 list-unstyled'>
       {results && results.length !== 0 ? (
         results.map(result => (
-          <li className='' key={result.id}>
-            <Link className='' to={`/movie/${result.id}`}>
+          <li className='p-1' key={result.id}>
+            <Link className='z-index-master' to={`/movie/${result.id}`}>
  { result.poster_path!=null ?(      
-       <img className="img-thumbnail rounded" width= '50'  height = '50' src={`https://image.tmdb.org/t/p/w500${result.poster_path}`}></img>):
+       <img className="rounded" width= '50'  height = '50' src={`https://image.tmdb.org/t/p/w500${result.poster_path}`}></img>):
        (
        <img className="img-thumbnail rounded" width= '50'  height = '50' src={`https://imgholder.ru/600x600/8493a8/adb9ca&text=no+poster&font=kelson`}></img>)
       } 
-              <span className=''>
+              <span className='p-1'>
                 {result.title}
                 <span className=''>{` (${
                   result.release_date
@@ -28,7 +28,7 @@ const SearchResults = ({ results }) => {
           </li>
         ))
       ) : (
-        <li className=''>
+        <li className='p-1'>
           <div className=''>No results found</div>
         </li>
       )}

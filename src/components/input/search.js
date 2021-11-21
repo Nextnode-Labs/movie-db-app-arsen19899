@@ -44,7 +44,7 @@ class Search extends Component {
     const searchMovies = _.debounce(query => this.searchMovies(query), 250);
     return (
       <div
-        className='form-control mt-3'
+        className=''
         onBlur={this.handleOnBlur}
         onClick={this.hideResults}
       >

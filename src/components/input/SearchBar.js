@@ -24,7 +24,7 @@ class SearchBar extends Component {
 
   render() {
     return (
-     
+     <div  className='form-control mt-3'>
         <input
           className='form-control'
           type="text"
@@ -33,7 +33,7 @@ class SearchBar extends Component {
           onChange={this.handleInputChange}
           onFocus={this.handleFocus}
         />
-     
+     </div>
     );
   }
 }
