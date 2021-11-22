@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Page404 from "../../containers/Page404";
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 import { BASE_API_IMG_URL } from '../../redux/constant';
 import Spinner from '../spinner/spinner';
 
@@ -111,7 +112,9 @@ class Movie extends Component {
               <div>
                 {movie.genres
                   ? movie.genres.map(genre => (
+                    
                       <span  className='btn btn-outline-warning m-1' key={genre.id}>{genre.name}</span>
+                     
                     ))
                   : 'N/A'}
               </div>
