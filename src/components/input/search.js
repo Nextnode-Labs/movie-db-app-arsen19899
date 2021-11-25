@@ -1,31 +1,50 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import axios from 'axios';
+import { BASE_PATH, API_KEY } from '../../redux/constant';
+import SearchBar from './SearchBar';
+import SearchResults from './SearchResults';
 
-import './input.css';
+class Search extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      results: [],
+      showResults: false
+    };
+    this.hideResults = this.hideResults.bind(this);
+    this.searchMovies = this.searchMovies.bind(this);
+  }
 
-const Input = ({ onChange, value, onKeyPress }) => (
-  <div className="form-control me-2">
-    <i className="fas fa-search" />
-    <input
-      className="input"
-      placeholder="Click to search"
-      onChange={onChange}
-      onKeyPress={onKeyPress}
-      value={value}
-    />
-  </div>
-);
 
-Input.propTypes = {
-  onChange: PropTypes.func,
-  onKeyPress: PropTypes.func,
-  value: PropTypes.string,
+
+ hideResults() {
+   setTimeout(() => this.setState({ showResults: false }), 100);
+ }
+
+  searchMovies(query) {
+    if (!query || query.length < 2) return;
+    const url = `${BASE_PATH}search/movie?${API_KEY}&query=${query}`;
+    axios
+      .get(url)
+      .then(response =>
+        this.setState({ results: response.data.results, showResults: true })
+      );
+  }
+
+  render() {
+    const searchMovies = query => this.searchMovies(query)
+    return (
+      <div
+        className=''
+       onClick={this.hideResults}
+      >
+      <SearchBar onSearch={searchMovies} />
+      {this.state.showResults ? (
+          <SearchResults results={this.state.results} />
+        ) : null}
+      </div>
+    );
+  }
 }
 
-Input.defaultProps = {
-  onChange: () => {},
-  onKeyPress: () => {},
-  value: ''
-}
-
-export default Input;
+export default Search;
