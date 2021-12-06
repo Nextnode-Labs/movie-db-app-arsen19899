@@ -18,8 +18,8 @@ const App = () => (
       <Header />
       <Routes>
         <Route exact path='/' element={<Home />} />
-        <Route exact path='/up' element={<Up />} />
-        <Route exact path='/top' element={<Top />} />
+        <Route exact path='/up/' element={<Up />} />
+        <Route exact path='/top/' element={<Top />} />
         <Route exact path='/login' element={<Login />} />
         <Route exact path='/movie/:movieId' element={<Movie />} />
         <Route exact path='/*' element={<NotFound />} />
