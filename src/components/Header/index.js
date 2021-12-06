@@ -12,7 +12,7 @@ const Header = () => {
       <header className='sticky-top bg-white container-fluid p0 m0'>
 <Navbar bg="light" expand="lg">
   <Container>
-    <Navbar.Brand href="/">Arsens MovieBD</Navbar.Brand>
+    <Navbar.Brand href="/">Arsens MovieBD1</Navbar.Brand>
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll">
       <Nav
