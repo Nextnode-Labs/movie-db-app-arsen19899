@@ -17,12 +17,12 @@ const App = () => (
     <UserProvider>
       <Header />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/up' element={<Up />} />
-        <Route path='/top' element={<Top />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/movie/:movieId' element={<Movie />} />
-        <Route path='/*' element={<NotFound />} />
+        <Route exact path='/' element={<Home />} />
+        <Route exact path='/up' element={<Up />} />
+        <Route exact path='/top' element={<Top />} />
+        <Route exact path='/login' element={<Login />} />
+        <Route exact path='/movie/:movieId' element={<Movie />} />
+        <Route exact path='/*' element={<NotFound />} />
       </Routes>
     </UserProvider>
   </Router>
