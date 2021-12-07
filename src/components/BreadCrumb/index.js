@@ -6,7 +6,7 @@ const BreadCrumb = ({ movieTitle }) => (
   <div className="container border-top pt-2">
   <nav aria-label="breadcrumb">
    <ol class="breadcrumb">
-   <li class="breadcrumb-item"><Link to='/'>Home</Link></li>
+   <li class="breadcrumb-item"><Link className='text-decoration-none text-dark' to='/'>Home</Link></li>
     <li class="breadcrumb-item">{movieTitle}</li>
     </ol>
   </nav>

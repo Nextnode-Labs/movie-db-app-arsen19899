@@ -12,7 +12,7 @@ const Header = () => {
       <header className='sticky-top bg-white container-fluid p0 m0'>
 <Navbar bg="light" expand="lg">
   <Container>
-    <Navbar.Brand><Link to='/'>Arsens MovieBD1</Link></Navbar.Brand>
+    <Navbar.Brand><Link className='text-decoration-none text-dark' to='/'>Arsens MovieBD1</Link></Navbar.Brand>
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll">
       <Nav
@@ -20,12 +20,12 @@ const Header = () => {
         style={{ maxHeight: '100px' }}
         navbarScroll
       >
-        <Nav.Link><Link to='/'>Home</Link></Nav.Link>
+        <Nav.Link><Link className='text-decoration-none text-dark' to='/'>Home</Link></Nav.Link>
         <NavDropdown title="Selection of films" id="navbarScrollingDropdown">
         <NavDropdown.Divider /> 
-          <NavDropdown.Item><Link to='/'>Popular films</Link></NavDropdown.Item>
-          <NavDropdown.Item><Link to='/up'>Upcoming films</Link></NavDropdown.Item>
-          <NavDropdown.Item><Link to='/top'>Top rated action</Link></NavDropdown.Item>
+          <NavDropdown.Item><Link className='text-decoration-none text-dark' to='/'>Popular films</Link></NavDropdown.Item>
+          <NavDropdown.Item><Link className='text-decoration-none text-dark' to='/up'>Upcoming films</Link></NavDropdown.Item>
+          <NavDropdown.Item><Link className='text-decoration-none text-dark' to='/top'>Top rated action</Link></NavDropdown.Item>
           <NavDropdown.Divider />
         </NavDropdown>
       </Nav>
