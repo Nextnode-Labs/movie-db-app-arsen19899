@@ -55,7 +55,6 @@ export const useTopFetch = () => {
     setIsLoadingMore(false);
   }, [isLoadingMore, state.page]);
 
-  // Write to sessionStorage
   useEffect(() => {
    sessionStorage.setItem('topState', JSON.stringify(state));
   }, [state]);

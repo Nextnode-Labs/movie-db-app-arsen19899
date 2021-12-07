@@ -54,7 +54,6 @@ export const useHomeFetch = () => {
     setIsLoadingMore(false);
   }, [isLoadingMore, state.page]);
 
-  // Write to sessionStorage
   useEffect(() => {
    sessionStorage.setItem('homeState', JSON.stringify(state));
   }, [state]);

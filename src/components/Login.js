@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../API';
-// Components
 import Button from './Button';
 import {Form,Alert } from 'react-bootstrap';
 import { Context } from '../context';

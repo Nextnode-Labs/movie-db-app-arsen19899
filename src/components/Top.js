@@ -1,7 +1,5 @@
 import React from 'react';
-// Config
 import { POSTER_SIZE, IMAGE_BASE_URL } from '../config';
-// Components
 import Grid from './Grid';
 import Thumb from './Thumb';
 import Spinner from './Spinner';

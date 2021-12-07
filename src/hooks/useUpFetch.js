@@ -56,7 +56,7 @@ export const useUpFetch = () => {
     setIsLoadingMore(false);
   }, [isLoadingMore, state.page]);
 
-  // Write to sessionStorage
+
   useEffect(() => {
    sessionStorage.setItem('upState', JSON.stringify(state));
   }, [state]);

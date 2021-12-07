@@ -4,7 +4,6 @@ const API_KEY = 'b9f7a0ee130480f6cd231acd274b0daa';
 const POPULAR_BASE_URL = `${API_URL}discover/movie?api_key=${API_KEY}&language=en-US`;
 const TOP_BASE_URL = `${API_URL}movie/top_rated?api_key=${API_KEY}&language=en-US`;
 const UP_BASE_URL = `${API_URL}movie/upcoming?api_key=${API_KEY}&language=en-US`;
-// For login and voting
 const REQUEST_TOKEN_URL = `${API_URL}authentication/token/new?api_key=${API_KEY}`;
 const LOGIN_URL = `${API_URL}authentication/token/validate_with_login?api_key=${API_KEY}`;
 const SESSION_ID_URL = `${API_URL}authentication/session/new?api_key=${API_KEY}`;
