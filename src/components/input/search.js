@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { BASE_PATH, API_KEY } from '../../redux/constant';
 import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
 
@@ -23,7 +22,7 @@ class Search extends Component {
 
   searchMovies(query) {
     if (!query || query.length < 2) return;
-    const url = `${BASE_PATH}search/movie?${API_KEY}&query=${query}`;
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=b9f7a0ee130480f6cd231acd274b0daa&query=${query}`;
     axios
       .get(url)
       .then(response =>
@@ -35,7 +34,7 @@ class Search extends Component {
     const searchMovies = query => this.searchMovies(query)
     return (
       <div
-        className=''
+        className='ms-5 me-5'
        onClick={this.hideResults}
       >
       <SearchBar onSearch={searchMovies} />

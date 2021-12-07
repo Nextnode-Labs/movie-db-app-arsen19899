@@ -19,7 +19,7 @@ class SearchBar extends Component {
 
   render() {
     return (
-     <div  className='form-control mt-3'>
+     <div  className='form-control w-100'>
         <input
           className='form-control'
           type="text"
