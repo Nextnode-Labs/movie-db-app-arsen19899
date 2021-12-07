@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../../context';
 import Search from "../input/search";
-import {Navbar, Nav,NavDropdown,Container,Form,Button  } from 'react-bootstrap';
+import {Navbar, Nav,NavDropdown,Container,Form,Button,Dropdown, } from 'react-bootstrap';
 
 const Header = () => {
   const [user] = useContext(Context);
@@ -38,16 +38,17 @@ const Header = () => {
         navbarScroll
       >
       {user ? (           
-<div className="dropdown">
-  <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+<Dropdown>
+  <Dropdown.Toggle variant="success" id="dropdown-basic">
   Logged in as: {user.username}
-  </button>
-  <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a className="dropdown-item" href="/">Exit</a></li>
-    <li><Link className="dropdown-item" to="/">Другое действие</Link></li>
-    <li><Link  className="dropdown-item" to="/">Что-то еще здесь</Link></li>
-  </ul>
-</div>   
+  </Dropdown.Toggle>
+
+  <Dropdown.Menu>
+    <Dropdown.Item href="/">exit</Dropdown.Item>
+    <Dropdown.Item><Link className="dropdown-item" to="/">Другое действие</Link></Dropdown.Item>
+    <Dropdown.Item><Link className="dropdown-item" to="/">Что-то еще здесь</Link></Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>  
                       ) : (
                           <Link to='/login'>
                               <Button variant="danger">Log in</Button>
