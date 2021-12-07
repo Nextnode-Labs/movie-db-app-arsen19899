@@ -37,8 +37,17 @@ const Header = () => {
         style={{ maxHeight: '100px' }}
         navbarScroll
       >
-      {user ? (
-                          <span>Logged in as: {user.username}</span>
+      {user ? (           
+<div className="dropdown">
+  <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+  Logged in as: {user.username}
+  </button>
+  <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a className="dropdown-item" href="/">Exit</a></li>
+    <li><Link className="dropdown-item" to="/">Другое действие</Link></li>
+    <li><Link  className="dropdown-item" to="/">Что-то еще здесь</Link></li>
+  </ul>
+</div>   
                       ) : (
                           <Link to='/login'>
                               <Button variant="danger">Log in</Button>
