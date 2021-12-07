@@ -12,7 +12,7 @@ const Header = () => {
       <header className='sticky-top bg-white container-fluid p0 m0'>
 <Navbar bg="light" expand="lg">
   <Container>
-    <Navbar.Brand href="/">Arsens MovieBD1</Navbar.Brand>
+    <Navbar.Brand><Link to='/'>Arsens MovieBD1</Link></Navbar.Brand>
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll">
       <Nav
@@ -23,9 +23,9 @@ const Header = () => {
         <Nav.Link href="/">Home</Nav.Link>
         <NavDropdown title="Selection of films" id="navbarScrollingDropdown">
         <NavDropdown.Divider /> 
-          <NavDropdown.Item href="/">Popular films</NavDropdown.Item>
-          <NavDropdown.Item href="/up">Upcoming films</NavDropdown.Item>
-          <NavDropdown.Item href="/top">Top rated action</NavDropdown.Item>
+          <NavDropdown.Item><Link to='/'>Popular films</Link></NavDropdown.Item>
+          <NavDropdown.Item><Link to='/up'>Upcoming films</Link></NavDropdown.Item>
+          <NavDropdown.Item><Link to='/top'>Top rated action</Link></NavDropdown.Item>
           <NavDropdown.Divider />
         </NavDropdown>
       </Nav>
