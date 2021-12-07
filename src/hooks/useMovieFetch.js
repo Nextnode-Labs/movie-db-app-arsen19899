@@ -15,7 +15,10 @@ export const useMovieFetch = movieId => {
 
         const movie = await API.fetchMovie(movieId);
         const credits = await API.fetchCredits(movieId);
-        
+
+        const directors = credits.crew.filter(
+          member => member.job === 'Director'
+        );
 
         setState({
           ...movie,
@@ -39,6 +42,7 @@ export const useMovieFetch = movieId => {
 
     fetchMovie();
   }, [movieId]);
+
 
   useEffect(() => {
     sessionStorage.setItem(movieId, JSON.stringify(state));
