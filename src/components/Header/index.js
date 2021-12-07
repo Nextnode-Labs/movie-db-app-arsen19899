@@ -45,8 +45,7 @@ const Header = () => {
 
   <Dropdown.Menu>
     <Dropdown.Item href="/"><span className="text-center text-danger fw-bold">EXIT</span></Dropdown.Item>
-    <Dropdown.Item><Link className="dropdown-item" to="/">Другое действие</Link></Dropdown.Item>
-    <Dropdown.Item><Link className="dropdown-item" to="/">Что-то еще здесь</Link></Dropdown.Item>
+   
   </Dropdown.Menu>
 </Dropdown>  
                       ) : (
