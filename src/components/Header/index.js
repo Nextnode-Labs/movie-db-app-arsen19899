@@ -44,7 +44,7 @@ const Header = () => {
   </Dropdown.Toggle>
 
   <Dropdown.Menu>
-    <Dropdown.Item className="dropdown-item" href="/">exit</Dropdown.Item>
+    <Dropdown.Item className="text-center text-danger fw-bold" href="/">EXIT</Dropdown.Item>
     <Dropdown.Item><Link className="dropdown-item" to="/">Другое действие</Link></Dropdown.Item>
     <Dropdown.Item><Link className="dropdown-item" to="/">Что-то еще здесь</Link></Dropdown.Item>
   </Dropdown.Menu>
