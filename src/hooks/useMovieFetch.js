@@ -15,10 +15,7 @@ export const useMovieFetch = movieId => {
 
         const movie = await API.fetchMovie(movieId);
         const credits = await API.fetchCredits(movieId);
-        // Get directors only
-        const directors = credits.crew.filter(
-          member => member.job === 'Director'
-        );
+        
 
         setState({
           ...movie,

@@ -38,13 +38,11 @@ export const useHomeFetch = () => {
       const sessionState = isPersistedState('homeState');
 
       if (sessionState) {
-        console.log('Grabbing from sessionStorage');
-        setState(sessionState);
+              setState(sessionState);
         return;
       }
 
-    console.log('Grabbing from API');
-    setState(initialState);
+      setState(initialState);
     fetchMovies(1, setState);
   }, [setState]);
   useEffect(() => {

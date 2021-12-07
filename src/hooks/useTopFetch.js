@@ -38,12 +38,12 @@ export const useTopFetch = () => {
       const sessionState = isPersistedState('topState');
 
       if (sessionState) {
-        console.log('Grabbing from sessionStorage');
+     
         setState(sessionState);
         return;
       }
 
-    console.log('Grabbing from API');
+
     setState(initialState);
     fetchMoviesTop(1, setState);
   }, [setState]);

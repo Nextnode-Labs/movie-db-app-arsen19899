@@ -38,12 +38,12 @@ export const useUpFetch = () => {
       const sessionState = isPersistedState('upState');
 
       if (sessionState) {
-        console.log('Grabbing from sessionStorage');
+
         setState(sessionState);
         return;
       }
 
-    console.log('Grabbing from API');
+ 
     setState(initialState);
     fetchMoviesUp(1, setState);
   }, [setState]);
