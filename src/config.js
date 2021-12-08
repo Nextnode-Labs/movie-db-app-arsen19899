@@ -1,6 +1,6 @@
 const API_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = 'b9f7a0ee130480f6cd231acd274b0daa';
-
+const GENR = `${API_URL}genre/movie/list?api_key=${API_KEY}`;
 const POPULAR_BASE_URL = `${API_URL}discover/movie?api_key=${API_KEY}&language=en-US`;
 const TOP_BASE_URL = `${API_URL}movie/top_rated?api_key=${API_KEY}&language=en-US`;
 const UP_BASE_URL = `${API_URL}movie/upcoming?api_key=${API_KEY}&language=en-US`;
@@ -15,6 +15,7 @@ const POSTER_SIZE = 'w780';
 export {
   POPULAR_BASE_URL,
   API_URL,
+  GENR,
   API_KEY,
   IMAGE_BASE_URL,
   BACKDROP_SIZE,

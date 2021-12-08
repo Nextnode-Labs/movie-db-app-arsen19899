@@ -2,6 +2,7 @@ import {
   POPULAR_BASE_URL,
   TOP_BASE_URL,
   UP_BASE_URL,
+  GENR,
   API_URL,
   API_KEY,
   REQUEST_TOKEN_URL,
@@ -19,6 +20,14 @@ const defaultConfig = {
 const apiSettings = {
   fetchMovies: async (page) => {
     const endpoint = `${POPULAR_BASE_URL}&page=${page}`;
+    return await (await fetch(endpoint)).json();
+  },
+  fetchGenr: async () => {
+    const endpoint = `${GENR}`;
+    return await (await fetch(endpoint)).json();
+  },
+  fetchByGen: async (genre, page) => {
+    const endpoint = `${POPULAR_BASE_URL}&page=${page}with_genres=${genre}`;
     return await (await fetch(endpoint)).json();
   },
   fetchMoviesUp: async (page) => {
