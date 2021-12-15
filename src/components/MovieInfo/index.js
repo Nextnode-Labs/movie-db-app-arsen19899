@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import {Wrapper} from './MovieInfo.styles';
+import Rate from "../Rate";
 
 const MovieInfo = ({ movie }) => (
   <Wrapper backdrop={movie.backdrop_path}>
@@ -67,10 +68,15 @@ const MovieInfo = ({ movie }) => (
                   : 'N/A'}
               </div>
             </div>
-            
+              <div className='text-light'>
+                  <h4>Rate Movie</h4>
+                  <div>
+                      <Rate />
+                  </div>
+              </div>
           </div>
           </div>
-          <p></p>
+
 
         </div>
       </div>
