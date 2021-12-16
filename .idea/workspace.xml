@@ -20,7 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba2743b6-06f6-48db-b79e-3ea424eac10c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/movie-db-app-arsen19899-hook.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/API.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +62,8 @@
       <option name="presentableId" value="Default" />
       <updated>1639563288226</updated>
       <workItem from="1639563289687" duration="624000" />
-      <workItem from="1639563915445" duration="603000" />
+      <workItem from="1639563915445" duration="3432000" />
+      <workItem from="1639639553167" duration="167000" />
     </task>
     <servers />
   </component>

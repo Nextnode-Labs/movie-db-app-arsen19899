@@ -7,6 +7,7 @@ import NotFound from './components/NotFound';
 import Login from './components/Login';
 import Up from './components/Up';
 import Top from './components/Top';
+import Genr from './components/Genr';
 import UserProvider from './context';
 
 
@@ -20,6 +21,7 @@ const App = () => (
         <Route exact path='/top/' element={<Top />} />
         <Route exact path='/login' element={<Login />} />
         <Route exact path='/movie/:movieId' element={<Movie />} />
+        <Route exact path='/genre/:genreId' element={<Genr />} />
         <Route exact path='/*' element={<NotFound />} />
       </Routes>
     </UserProvider>
