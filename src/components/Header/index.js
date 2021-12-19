@@ -4,19 +4,15 @@ import { Context } from '../../context';
 import Search from "../input/search";
 import {Navbar, Nav,NavDropdown,Container,Form,Button,Dropdown, } from 'react-bootstrap';
 
-
 const Header = () => {
-  const [user,setUser] = useContext(Context);
-  const exit = () => {
-    setUser(undefined)
-  }
- 
+  const [user] = useContext(Context);
+
 
   return (
       <header className='sticky-top bg-white container-fluid p0 m0'>
 <Navbar bg="light" expand="lg">
   <Container>
-    <Navbar.Brand><Link className='text-decoration-none text-dark' to='/'>Arsens MovieBD</Link></Navbar.Brand>
+    <Navbar.Brand><Link className='text-decoration-none text-dark' to='/'>Arsens MovieBD1</Link></Navbar.Brand>
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll">
       <Nav
@@ -25,8 +21,6 @@ const Header = () => {
         navbarScroll
       >
         <Nav.Link><Link className='text-decoration-none text-dark' to='/'>Home</Link></Nav.Link>
-        <Genre/>
-                 
         <NavDropdown title="Selection of films" id="navbarScrollingDropdown">
         <NavDropdown.Divider /> 
           <NavDropdown.Item><Link className='text-decoration-none text-dark' to='/'>Popular films</Link></NavDropdown.Item>
@@ -50,7 +44,7 @@ const Header = () => {
   </Dropdown.Toggle>
 
   <Dropdown.Menu>
-    <Dropdown.Item> <Link to='/' onClick={exit}><span className="text-center text-danger fw-bold">EXIT</span></Link></Dropdown.Item>
+    <Dropdown.Item href="/"><span className="text-center text-danger fw-bold">EXIT</span></Dropdown.Item>
    
   </Dropdown.Menu>
 </Dropdown>  
