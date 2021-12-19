@@ -5,8 +5,10 @@ import Search from "../input/search";
 import {Navbar, Nav,NavDropdown,Container,Form,Button,Dropdown, } from 'react-bootstrap';
 
 const Header = () => {
-  const [user] = useContext(Context);
-
+  const [user,setUser] = useContext(Context);
+  const exit = () => {
+    setUser(undefined)
+  }
 
   return (
       <header className='sticky-top bg-white container-fluid p0 m0'>
@@ -44,7 +46,7 @@ const Header = () => {
   </Dropdown.Toggle>
 
   <Dropdown.Menu>
-    <Dropdown.Item href="/"><span className="text-center text-danger fw-bold">EXIT</span></Dropdown.Item>
+    <Dropdown.Item><span onClick={exit} className="text-center text-danger fw-bold">EXIT</span></Dropdown.Item>
    
   </Dropdown.Menu>
 </Dropdown>  
