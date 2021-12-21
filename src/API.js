@@ -26,8 +26,8 @@ const apiSettings = {
     const endpoint = `${GENR}`;
     return await (await fetch(endpoint)).json();
   },
-  fetchByGen: async (genrId, page) => {
-    const endpoint = `${POPULAR_BASE_URL}&page=${page}with_genres=${genrId}`;
+  fetchByGen: async (genreId, page) => {
+    const endpoint = `${POPULAR_BASE_URL}&page=${page}with_genres=${genreId}`;
     return await (await fetch(endpoint)).json();
   },
   fetchMoviesUp: async (page) => {

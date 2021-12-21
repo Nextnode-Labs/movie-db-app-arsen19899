@@ -1,19 +1,18 @@
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
 import Spinner from '../Spinner';
 // Hook
 import { useGenresFetch } from '../../hooks/useGenreFetch';
 import {NavDropdown } from 'react-bootstrap';
 
 
-const Genre = ({ setGenrId }) => {
+const Genre = () => {
   const {
     state,
     loading,
     error,
   } = useGenresFetch();
-  const initial = useRef(true);
+
 
   
  
@@ -39,7 +38,5 @@ const Genre = ({ setGenrId }) => {
     </>
   );
 };
-Genre.propTypes = {
-  callback: PropTypes.func
-};
+
 export default Genre ;

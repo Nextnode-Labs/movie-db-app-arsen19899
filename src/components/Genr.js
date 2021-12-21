@@ -1,7 +1,7 @@
 import React from 'react';
 // Config
 import { POSTER_SIZE, IMAGE_BASE_URL } from '../config';
-// Components
+import { useParams } from 'react-router-dom';
 import Grid from './Grid';
 import Thumb from './Thumb';
 import Spinner from './Spinner';
@@ -13,16 +13,15 @@ import { useByGenryFetch } from '../hooks/useByGenryFetch';
 
 
 const Genr = () => {
+  const {genreId} = useParams();
   const {
     state,
     loading,
     error,
-    genrId, 
-    setGenrId,
     setIsLoadingMore
-  } = useByGenryFetch();
+  } = useByGenryFetch(genreId);
 
-  // console.log(state);
+  console.log(genreId);
   
   if (error) return <div>Something went wrong ...</div>;
 

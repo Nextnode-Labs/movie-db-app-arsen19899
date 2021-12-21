@@ -6,7 +6,6 @@ const initialState = {
 };
 
 export const useGenresFetch = () => {
-  const [genrId, setGenrId] = useState('');
   const [state, setState] = useState(initialState);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -39,5 +38,5 @@ export const useGenresFetch = () => {
   
 
  
-  return {state,loading,error, genrId, setGenrId, };
+  return {state,loading,error };
 };

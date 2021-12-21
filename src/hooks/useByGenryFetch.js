@@ -10,18 +10,17 @@ const initialState = {
 };
 
 export const useByGenryFetch = () => {
-  const [genrId, setGenrId] = useState('');
   const [state, setState] = useState(initialState);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
 
-  const fetchByGen = async (page,genrId='') => {
+  const fetchByGen = async (page) => {
     try {
       setError(false);
       setLoading(true);
 
-      const movies = await API.fetchByGen(genrId,page);
+      const movies = await API.fetchByGen(genreId,page);
 
       setState(prev => ({
         ...movies,
@@ -33,43 +32,28 @@ export const useByGenryFetch = () => {
     }
     setLoading(false);
   };
-   useEffect(() => {
-    if (!genrId) {
-      const sessionState = isPersistedState('genrState');
+  useEffect(() => {
 
-      if (sessionState) {
-        console.log('Grabbing from sessionStorage');
-        setState(sessionState);
-        return;
-      }
+    const sessionState = isPersistedState('genreState');
+
+    if (sessionState) {
+            setState(sessionState);
+      return;
     }
-    console.log('Grabbing from API');
+
     setState(initialState);
-    fetchByGen(1, genrId);
-  }, [genrId]);
+    fetchByGen(1, setState);
+}, [setState]);
+useEffect(() => {
+  if (!isLoadingMore) return;
 
-  useEffect(() => {
+  fetchByGen(state.page + 1);
+  setIsLoadingMore(false);
+}, [isLoadingMore, state.page]);
 
-      const sessionState = isPersistedState('genreState');
+useEffect(() => {
+ sessionStorage.setItem('genreState', JSON.stringify(state));
+}, [state]);
 
-      if (sessionState) {
-              setState(sessionState);
-        return;
-      }
-
-      setState(initialState);
-      fetchByGen(1, setState);
-  }, [setState]);
-  useEffect(() => {
-    if (!isLoadingMore) return;
-
-    fetchByGen(state.page + 1);
-    setIsLoadingMore(false);
-  }, [isLoadingMore, state.page]);
-
-  useEffect(() => {
-   sessionStorage.setItem('genreState', JSON.stringify(state));
-  }, [state]);
-
-  return { state, loading, error, genrId, setGenrId,  setIsLoadingMore };
+return { state, loading, error, setIsLoadingMore };
 };
