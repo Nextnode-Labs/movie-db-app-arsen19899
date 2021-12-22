@@ -1,10 +1,20 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import {Wrapper} from './MovieInfo.styles';
 import Rate from "../Rate";
+import React, { useContext } from 'react';
+import API from '../../API';
+import { Context } from '../../context';
 
-const MovieInfo = ({ movie }) => (
+const MovieInfo = ({ movie }) => {
+  const [user] = useContext(Context);
+
+  const handleRating = async value => {
+    const rate = await API.rateMovie(user.sessionId, movie.id, value);
+    console.log(rate);
+  };
+
+  return (
   <Wrapper backdrop={movie.backdrop_path}>
 <div className='container'>
         <div className='row'>
@@ -71,7 +81,7 @@ const MovieInfo = ({ movie }) => (
               <div className='text-light'>
                   <h4>Rate Movie</h4>
                   <div>
-                      <Rate />
+                  <Rate callback={handleRating} />
                   </div>
               </div>
           </div>
@@ -81,10 +91,12 @@ const MovieInfo = ({ movie }) => (
         </div>
       </div>
   </Wrapper>
-);
+  );
+};
 
 MovieInfo.propTypes = {
   movie: PropTypes.object
-}
+};
 
 export default MovieInfo;
+

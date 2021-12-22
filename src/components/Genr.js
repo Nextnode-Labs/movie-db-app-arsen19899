@@ -1,4 +1,5 @@
 import React from 'react';
+
 // Config
 import { POSTER_SIZE, IMAGE_BASE_URL } from '../config';
 import { useParams } from 'react-router-dom';
@@ -6,14 +7,16 @@ import Grid from './Grid';
 import Thumb from './Thumb';
 import Spinner from './Spinner';
 import Button from './Button';
-
+import API from '../API';
 
 // Hook
 import { useByGenryFetch } from '../hooks/useByGenryFetch';
 
 
 const Genr = () => {
+  
   const {genreId} = useParams();
+
   const {
     state,
     loading,
@@ -21,7 +24,16 @@ const Genr = () => {
     setIsLoadingMore
   } = useByGenryFetch(genreId);
 
-  console.log(genreId);
+
+  const movs = API.fetchByGen(genreId, state.page);
+
+  
+  var res = movs.then(values => { 
+   values.results.map(mov => (
+    console.log(mov)))
+  });
+
+  console.log(state)
   
   if (error) return <div>Something went wrong ...</div>;
 

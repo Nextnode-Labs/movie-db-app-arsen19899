@@ -9,8 +9,8 @@ const initialState = {
   total_results: 0
 };
 
-export const useByGenryFetch = () => {
-  const [state, setState] = useState(initialState);
+export const useByGenryFetch = (genreId) => {
+    const [state, setState] = useState(initialState);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
@@ -32,28 +32,29 @@ export const useByGenryFetch = () => {
     }
     setLoading(false);
   };
+
   useEffect(() => {
 
-    const sessionState = isPersistedState('genreState');
+      const sessionState = isPersistedState('genreState');
 
-    if (sessionState) {
-            setState(sessionState);
-      return;
-    }
+      if (sessionState) {
+              setState(sessionState);
+        return;
+      }
 
-    setState(initialState);
-    fetchByGen(1, setState);
-}, [setState]);
-useEffect(() => {
-  if (!isLoadingMore) return;
+      setState(initialState);
+      fetchByGen(1, setState);
+  }, [setState]);
+  useEffect(() => {
+    if (!isLoadingMore) return;
 
-  fetchByGen(state.page + 1);
-  setIsLoadingMore(false);
-}, [isLoadingMore, state.page]);
+    fetchByGen(state.page + 1);
+    setIsLoadingMore(false);
+  }, [isLoadingMore, state.page]);
 
-useEffect(() => {
- sessionStorage.setItem('genreState', JSON.stringify(state));
-}, [state]);
+  useEffect(() => {
+   sessionStorage.setItem('genreState', JSON.stringify(state));
+  }, [state]);
 
-return { state, loading, error, setIsLoadingMore };
+  return { state, loading, error, setIsLoadingMore };
 };
