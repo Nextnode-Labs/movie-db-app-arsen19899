@@ -1,24 +1,29 @@
-import React, { useState } from 'react';
+import { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 
-const Rate = ({ callback }) => {
-    const [value, setValue] = useState(5);
+type Props = {
+  callback: (value: string) => void
+}
 
-    return (
+const Rate: React.FC<Props> = ({ callback }) => {
+  const [value, setvalue] = useState('5')
+  return (
+    <>
         <div>
             <input
                 type='range'
                 min='1'
                 max='10'
                 value={value}
-                onChange={e => setValue(e.currentTarget.value)}
+                onChange={e => setvalue(e.currentTarget.value)}
             />
             {value}
             <p>
                 <Button variant="danger" onClick={() => callback(value)}>Rate</Button>
             </p>
         </div>
-    );
-};
+    </>
+  )
+}
 
-export default Rate;
+export default Rate

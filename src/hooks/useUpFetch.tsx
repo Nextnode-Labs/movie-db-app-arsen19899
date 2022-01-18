@@ -1,26 +1,26 @@
 import { useState, useEffect } from 'react';
-import API from '../API';
+import API, { Movie } from '../API'
 import { isPersistedState } from '../helpers';
 
 const initialState = {
   page: 0,
-  results: [],
+  results: [] as Movie[],
   total_pages: 0,
   total_results: 0
 };
 
-export const useTopFetch = () => {
+export const useUpFetch = () => {
   const [state, setState] = useState(initialState);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
 
-  const fetchMoviesTop = async (page) => {
+  const fetchMoviesUp = async (page: number) => {
     try {
       setError(false);
       setLoading(true);
 
-      const movies = await API.fetchMoviesTop(page);
+      const movies = await API.fetchMoviesUp(page);
 
       setState(prev => ({
         ...movies,
@@ -35,28 +35,30 @@ export const useTopFetch = () => {
 
   useEffect(() => {
 
-      const sessionState = isPersistedState('topState');
+      const sessionState = isPersistedState('upState');
 
       if (sessionState) {
-     
+
         setState(sessionState);
         return;
       }
 
-
+ 
     setState(initialState);
-    fetchMoviesTop(1, setState);
+    fetchMoviesUp(1);
   }, [setState]);
 
+  
   useEffect(() => {
     if (!isLoadingMore) return;
 
-    fetchMoviesTop(state.page + 1);
+    fetchMoviesUp(state.page + 1);
     setIsLoadingMore(false);
   }, [isLoadingMore, state.page]);
 
+
   useEffect(() => {
-   sessionStorage.setItem('topState', JSON.stringify(state));
+   sessionStorage.setItem('upState', JSON.stringify(state));
   }, [state]);
 
   return { state, loading, error, setIsLoadingMore };

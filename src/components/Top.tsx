@@ -25,17 +25,17 @@ const Top = () => {
       <Grid header={'Top Movies'}>
         {state.results.map(movie => (
           <Thumb
-            key={movie.id}
-            clickable
-            image={
-              movie.poster_path
-                ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
-                : `https://imgholder.ru/600x600/8493a8/adb9ca&text=no+poster&font=kelson`
-            }
-            movieId={movie.id}
-            movieTitle={movie.title}
-            movieRate={movie.vote_average}
-            movieDate={movie.release_date}
+              key={movie.id}
+              clickable
+              image={
+                movie.poster_path
+                    ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
+                    : `https://imgholder.ru/600x600/8493a8/adb9ca&text=no+poster&font=kelson`
+              }
+              movieId={movie.id}
+              movieTitle={movie.title}
+              movieRate={movie.vote_average}
+              movieDate={movie.release_date}
           />
         ))}
       </Grid>
