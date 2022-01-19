@@ -2,7 +2,6 @@ import { Wrapper, Content, Text } from './MovieInfo.styles'
 import moment from 'moment';
 import Rate from '../Rate'
 import API from '../../API'
-import { IMAGE_BASE_URL, POSTER_SIZE } from '../../config'
 import { MovieState } from '../../hooks/useMovieFetch'
 import { Context } from '../../context'
 import { useContext } from 'react'

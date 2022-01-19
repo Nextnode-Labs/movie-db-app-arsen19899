@@ -48,6 +48,10 @@ export type Cast = {
   name: string
   profile_path: string
 }
+export type Genr= {
+  id: number
+  name: string
+}
 
 export type Crew = {
   job: string
