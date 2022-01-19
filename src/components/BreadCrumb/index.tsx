@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 
 type Props = {
-  movieTitle : string[]
+  movieTitle : string
 }
 
 const BreadCrumb: React.FC<Props> = ({  movieTitle  }) => {

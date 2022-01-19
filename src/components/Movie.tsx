@@ -8,7 +8,7 @@ import Actor from './Actor'
 import { useMovieFetch } from '../hooks/useMovieFetch'
 
 import { useParams } from 'react-router'
-import { useEffect } from 'react'
+
 
 const Movie: React.FC = () => {
   let { movieId } = useParams()
@@ -17,9 +17,6 @@ const Movie: React.FC = () => {
 
   const { state: movie, loading, error } = useMovieFetch(movieIdP)
 
-  useEffect(() => {
-    document.title = `${movie.original_title || 'Loading...'} | ${SITE_NAME}`
-  }, [movie])
 
   if (loading && !error) return <Spinner />
   if (error) return <div>Something went wrong...</div>
@@ -31,6 +28,7 @@ const Movie: React.FC = () => {
         <Grid header='Actors'>
             {movie.actors.map(actor => (
                 <Actor
+                    id={actor.credit_id}
                     key={actor.credit_id}
                     name={actor.name}
                     character={actor.character}
