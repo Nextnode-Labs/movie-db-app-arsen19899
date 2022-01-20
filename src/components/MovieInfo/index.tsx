@@ -1,4 +1,4 @@
-import { Wrapper, Content, Text } from './MovieInfo.styles'
+import { Wrapper} from './MovieInfo.styles'
 import moment from 'moment';
 import Rate from '../Rate'
 import API from '../../API'

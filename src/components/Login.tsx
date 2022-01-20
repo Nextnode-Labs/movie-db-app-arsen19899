@@ -10,14 +10,14 @@ const Login: React.FC = () => {
   const [userName, setUserName] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState(false)
-  const [loading, setLoading] = useState(false)
+
 
   const [_user, setuser ]: any = useContext(Context)
   const navigate = useNavigate()
 
   const handleSubmit = async () => {
     setError(false)
-    setLoading(true)
+
     try {
       const requestToken = await API.getRequestToken()
       const session = await API.authenticate(requestToken, userName, password)
@@ -30,7 +30,7 @@ const Login: React.FC = () => {
       navigate('/')
     } catch {
       setError(true)
-      setLoading(false)
+
     }
   }
 
@@ -67,7 +67,7 @@ const Login: React.FC = () => {
         className="col-8 mx-auto shadow p-3 mb-5 bg-white rounded"
       />
         </Form.Group>
-      <Button text="Login" loading={loading} callback={handleSubmit} />
+      <Button text="Login" callback={handleSubmit} />
     </Form>
   )
 }

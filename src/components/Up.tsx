@@ -30,8 +30,7 @@ const Up = () => {
 
               <Thumb
                   key={movie.id}
-                  clickable
-                  image={
+                     image={
                     movie.poster_path
                         ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
                         : `https://imgholder.ru/600x600/8493a8/adb9ca&text=no+poster&font=kelson`
