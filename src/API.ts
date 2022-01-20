@@ -52,6 +52,10 @@ export type Genr= {
   id: number
   name: string
 }
+export type Genres= {
+  genr: Genr[]
+}
+
 
 export type Crew = {
   job: string
@@ -65,21 +69,7 @@ export type Credits = {
   crew: Crew[]
 }
 
-export type Person = {
-  birthday: string
-  known_for_department: string
-  deathday: string
-  id: number
-  name: string
-  gender: number
-  biography: string
-  place_of_birth: string
-  profile_path: string
-}
 
-export type PersonCredits = {
-  cast: Movie[]
-}
 
 const apiSettings = {
   fetchMovies: async (page: number): Promise<Movies> => {
