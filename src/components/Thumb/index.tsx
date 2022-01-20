@@ -4,13 +4,12 @@ import moment from 'moment';
 type Props = {
   image: string
   movieId?: number
-  clickable?: boolean
   movieTitle?: string
   movieRate?: number
   movieDate?: string
 }
 
-const Thumb: React.FC<Props> = ({ image, movieId, movieTitle, movieRate, movieDate, clickable }) => (
+const Thumb: React.FC<Props> = ({ image, movieId, movieTitle, movieRate, movieDate}) => (
   <>
 
         <Link className='col-md-3 col-sm-12 col-xs-12 shadow p-3 mb-5 bg-white rounded position-relative text-decoration-none' to={`/movie/${movieId}`}>

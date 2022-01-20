@@ -1,4 +1,4 @@
-import { IMAGE_BASE_URL, POSTER_SIZE, SITE_NAME } from '../config'
+import { IMAGE_BASE_URL, POSTER_SIZE } from '../config'
 import Grid from './Grid'
 import Spinner from './Spinner'
 import BreadCrumb from './BreadCrumb'
