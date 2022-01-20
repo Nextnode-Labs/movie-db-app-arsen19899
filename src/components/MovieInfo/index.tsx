@@ -28,9 +28,9 @@ const MovieInfo: React.FC<Props> = ({ movie }) => {
             <div className='col-md-3 col-sm-6 col-xs-12 position-relative text-decoration-none'>
               { movie.poster_path!=null ?(
 
-                      <img className="img-fluid shadow p-3 mb-5 bg-white rounded" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}></img>):
+                      <img className="img-fluid shadow p-3 mb-5 bg-white rounded" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt=""></img>):
                   (
-                      <img className="img-fluid shadow p-3 mb-5 bg-white rounded" src={`https://imgholder.ru/600x600/8493a8/adb9ca&text=no+poster&font=kelson`}></img>)
+                      <img className="img-fluid shadow p-3 mb-5 bg-white rounded" src={`https://imgholder.ru/600x600/8493a8/adb9ca&text=no+poster&font=kelson`} alt=""></img>)
               }
             </div>
             <div className='col-md-8 col-sm-6 col-xs-12'>

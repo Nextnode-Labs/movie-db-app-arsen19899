@@ -24,9 +24,9 @@ const Thumb: React.FC<Props> = ({ image, movieId, movieTitle, movieRate, movieDa
       </span>
             { image!=null ?(
 
-                    <img className="img-fluid" src={image}></img>):
+                    <img className="img-fluid" src={image} alt=""></img>):
                 (
-                    <img className="img-fluid" src={`https://imgholder.ru/600x600/8493a8/adb9ca&text=no+poster&font=kelson`}></img>)
+                    <img className="img-fluid" src={`https://imgholder.ru/600x600/8493a8/adb9ca&text=no+poster&font=kelson`} alt=""></img>)
             }
 
             <h4 className="text-center text-muted text-decoration-none">{movieTitle}</h4>
