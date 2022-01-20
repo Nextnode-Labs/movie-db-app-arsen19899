@@ -70,16 +70,7 @@ const MovieInfo: React.FC<Props> = ({ movie }) => {
                   <h4>Voting Average</h4>
                   <p>{movie.vote_average * 10}%</p>
                 </div>
-                <div className='text-light'>
-                  <h4>Genres</h4>
-                  <div>
-                    {movie.genres
-                        ? movie.genres.map(genre => (
-                            <span  className='btn btn-outline-warning m-1' key={genre.id}>{genre.name}</span>
-                        ))
-                        : 'N/A'}
-                  </div>
-                </div>
+
                 {user && (
                 <div className='text-light'>
                   <h4>Rate Movie</h4>

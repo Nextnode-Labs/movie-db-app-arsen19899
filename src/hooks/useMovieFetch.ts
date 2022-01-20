@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 // API
-import API, { Movie, Cast, Crew,Genr } from '../API'
+import API, { Movie, Cast, Crew,Genres } from '../API'
 import { isPersistedState } from '../helpers'
 
-export type MovieState = Movie & { actors: Cast[]; directors: Crew[];genres:Genr[]}
+export type MovieState = Movie & { actors: Cast[]; directors: Crew[]}
 
 export const useMovieFetch = (movieId: string) => {
   const [state, setState] = useState<MovieState>({} as MovieState)
@@ -21,12 +21,12 @@ export const useMovieFetch = (movieId: string) => {
         const directors = credits.crew.filter(
           (member) => member.job === 'Director'
         )
-        const genres = movie.genres
+
         setState({
           ...movie,
           actors: credits.cast,
           directors,
-          genres,
+
         })
         setLoading(false)
       } catch (error) {
