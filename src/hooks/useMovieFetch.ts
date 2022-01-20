@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 // API
-import API, { Movie, Cast, Crew,Genres } from '../API'
+import API, { Movie, Cast, Crew} from '../API'
 import { isPersistedState } from '../helpers'
 
 export type MovieState = Movie & { actors: Cast[]; directors: Crew[]}

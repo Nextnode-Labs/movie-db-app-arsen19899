@@ -50,9 +50,9 @@ const Search: React.FC = () => {
                         >
 
                                 { movie.poster_path!=null ?(
-                                        <img className="rounded" width= '50'  height = '50' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}></img>):
+                                        <img className="rounded" width= '50'  height = '50' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt=""></img>):
                                     (
-                                        <img className="img-thumbnail rounded" width= '50'  height = '50' src={`https://imgholder.ru/600x600/8493a8/adb9ca&text=no+poster&font=kelson`}></img>)
+                                        <img className="img-thumbnail rounded" width= '50'  height = '50' src={`https://imgholder.ru/600x600/8493a8/adb9ca&text=no+poster&font=kelson`} alt=""></img>)
                                 }
                             <span className='p-1 text-secondary'>
                 {movie.title}
